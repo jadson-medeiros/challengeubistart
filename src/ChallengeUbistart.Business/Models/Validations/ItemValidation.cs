@@ -1,4 +1,5 @@
 using FluentValidation;
+using System;
 
 namespace ChallengeUbistart.Business.Models.Validations
 {
@@ -8,6 +9,9 @@ namespace ChallengeUbistart.Business.Models.Validations
         {
             RuleFor(f => f.Description)
                 .NotEmpty().WithMessage("The {PropertyName} is required.");
+
+            RuleFor(f => f.FinishedAt < DateTime.Now)
+                .Equal(true).WithMessage("The {PropertyName} is required.");
         }
     }
 }
