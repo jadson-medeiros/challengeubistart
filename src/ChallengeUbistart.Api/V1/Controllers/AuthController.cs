@@ -35,7 +35,7 @@ namespace ChallengeUbistart.Api.V1.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [HttpPost("newAccount")]
+        [HttpPost("new-account")]
         public async Task<ActionResult> Register(RegisterUserViewModel registerUser)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);

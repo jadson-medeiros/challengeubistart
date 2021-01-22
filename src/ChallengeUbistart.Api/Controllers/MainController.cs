@@ -13,8 +13,8 @@ namespace ChallengeUbistart.Api.Controllers
         private readonly INotify _notify;
         public readonly IUser AppUser;
 
-        protected Guid UsuarioId { get; set; }
-        protected bool UsuarioAutenticated { get; set; }
+        protected Guid UserId { get; set; }
+        protected bool UserAutenticated { get; set; }
 
         protected MainController(INotify notify, IUser appUser)
         {
@@ -23,8 +23,8 @@ namespace ChallengeUbistart.Api.Controllers
 
             if (appUser.IsAuthenticated())
             {
-                UsuarioId = appUser.GetUserId();
-                UsuarioAutenticated = true;
+                UserId = appUser.GetUserId();
+                UserAutenticated = true;
             }
         }
 

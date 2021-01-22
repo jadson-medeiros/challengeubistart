@@ -11,6 +11,8 @@ namespace ChallengeUbistart.Data.Context
     {
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
 
+        public DbSet<Item> Items { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes()
