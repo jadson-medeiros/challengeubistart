@@ -36,7 +36,7 @@ namespace ChallengeUbistart.Api
         {
             services.AddDbContext<MyDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseInMemoryDatabase("Database");
             });
 
             services.AddIdentityConfig(Configuration);

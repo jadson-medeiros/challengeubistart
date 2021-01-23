@@ -8,7 +8,10 @@ namespace ChallengeUbistart.Api.Configuration
     {
         public AutomapperConfig()
         {
-            CreateMap<Item, ItemViewModel>().ReverseMap();
+            CreateMap<ItemViewModel, Item>()
+                .ReverseMap();
+            CreateMap<Item, ItemViewModel>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.ItemStatus.ToString()));
         }
     }
 }

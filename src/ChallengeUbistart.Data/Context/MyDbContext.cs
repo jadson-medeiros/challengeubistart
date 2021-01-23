@@ -12,7 +12,8 @@ namespace ChallengeUbistart.Data.Context
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
 
         public DbSet<Item> Items { get; set; }
-        
+        public DbSet<Client> Clients { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes()
@@ -33,12 +34,12 @@ namespace ChallengeUbistart.Data.Context
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Property("Date").CurrentValue = DateTime.Now;
+                    entry.Property("DateCreated").CurrentValue = DateTime.Now;
                 }
 
                 if (entry.State == EntityState.Modified)
                 {
-                    entry.Property("Date").IsModified = false;
+                    entry.Property("DateCreated").IsModified = false;
                 }
             }
 

@@ -20,6 +20,7 @@ namespace ChallengeUbistart.Api.Configuration
 
             // Repository
             services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IClientRepository, ClientRepository>();
 
             // Services
             services.AddScoped<IItemService, ItemService>();
